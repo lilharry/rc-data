@@ -11,10 +11,10 @@ Our goal is to display information about student participants within Stuy's stud
 
 ## Types of data
 Most data will be over a period of four years, separated by grade level.
-###### (P): represented by pie charts
-###### (B): bar graphs
-###### (L): line graphs.
-- number of students in each club (P)
+###### (P): pie chart
+###### (B): bar graph
+###### (L): line graph
+- number of students in each club ###### (P)
 - total volunteer hours (P)
 - individual volunteer hours by ID (L)
 - data for events (volunteers, total volunteer hours) (B) 
