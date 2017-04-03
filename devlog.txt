@@ -1,3 +1,7 @@
-celineY -- 2017-03-31 11:56 PM
+celineY -- 2017-03-31 23:56
        Created flask app
        Created RC donut chart template
+harryL -- 2017-04-02 12:28
+       Added required database files
+       Modifed app.py to create database
+       Initialize utils
