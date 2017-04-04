@@ -1,10 +1,12 @@
 celineY -- 2017-03-31 23:56
-       Created flask app
-       Created RC donut chart template
+        Created flask app
+        Created RC donut chart template
 harryL -- 2017-04-02 12:28
-       Added required database files
-       Modifed app.py to create database
-       Initialize utils
+        Added required database files
+        Modifed app.py to create database
+        Initialize utils
 harryL -- 2017-04-03 22:26
-	   Added csv parser for kcids and rcids
-	   
+	    Added csv parser for kcids and rcids
+	    Added database (remove database.db + touch database.db if you want to)
+harryL -- 2017-04-04 10:00	   
+	    Added csvs to directory
