@@ -1,14 +1,13 @@
 from flask import Flask, render_template, url_for
+from utils import hours
+import os
+import sqlite3
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
 	return render_template('main.html')
-
-if __name__ == "__main__":
-    app.debug = True
-    app.run()
 
 if __name__ == '__main__':
     if os.path.getsize("data/database.db") == 0:
@@ -17,8 +16,10 @@ if __name__ == '__main__':
         c = db.cursor()
         print "Initializing database"
         c.execute("CREATE TABLE rcids (id INTEGER, hours INTEGER, grade INTEGER)")
+        
         c.execute("CREATE TABLE rcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
         c.execute("CREATE TABLE kcids (id INTEGER, hours INTEGER, grade INTEGER)")
+        hours.addKcidsToDb()
         c.execute("CREATE TABLE kcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
         
         db.commit()
