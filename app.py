@@ -15,16 +15,20 @@ if __name__ == '__main__':
         db = sqlite3.connect(f, check_same_thread=False)
         c = db.cursor()
         print "Initializing database"
-        c.execute("CREATE TABLE rcids (id INTEGER, hours INTEGER, grade INTEGER)")
-        
+        c.execute("CREATE TABLE rcids1314 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE rcids1415 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE rcids1516 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE rcids1617 (id INTEGER, hours INTEGER, grade INTEGER)")
+
         c.execute("CREATE TABLE rcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
-        
+
         c.execute("CREATE TABLE kcids1314 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1415 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1516 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1617 (id INTEGER, hours INTEGER, grade INTEGER)")
+        
+        hours.addRcidsToDb()
         hours.addKcidsToDb()
-        c.execute("CREATE TABLE kcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
         
         db.commit()
         db.close()
