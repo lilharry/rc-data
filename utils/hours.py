@@ -38,9 +38,10 @@ def addKcidsToDb():
                 grade = 2
             elif student[0:1] == "3":
                 grade = 1    
+            student = int(student)
             hours = int(row[1])
 
-            h1314.append(student,hours,grade)
+            h1314.append([student,hours,grade])
 
         except ValueError:
             continue
@@ -57,9 +58,10 @@ def addKcidsToDb():
                 grade = 2
             elif student[0:1] == "4":
                 grade = 1    
+            student = int(student)
             hours = int(row[1])
 
-            h1415.append(student,hours,grade)
+            h1415.append([student,hours,grade])
         
         except ValueError:
             continue
@@ -76,9 +78,10 @@ def addKcidsToDb():
                 grade = 2
             elif student[0:1] == "5":
                 grade = 1    
+            student = int(student)
             hours = int(row[1])
 
-            h1516.append(student,hours,grade)
+            h1516.append([student,hours,grade])
             
         except ValueError:
             continue
@@ -95,9 +98,10 @@ def addKcidsToDb():
                 grade = 2
             elif student[0:1] == "1":
                 grade = 1    
+            student = int(student)
             hours = int(row[1])
         
-            h1617.append(student,hours,grade)          
+            h1617.append([student,hours,grade])          
     
         except ValueError:
             continue
@@ -144,7 +148,6 @@ def addRcidsToDb():
 
     db.commit()
     db.close()
-
 
 
 

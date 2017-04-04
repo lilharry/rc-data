@@ -18,7 +18,11 @@ if __name__ == '__main__':
         c.execute("CREATE TABLE rcids (id INTEGER, hours INTEGER, grade INTEGER)")
         
         c.execute("CREATE TABLE rcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
-        c.execute("CREATE TABLE kcids (id INTEGER, hours INTEGER, grade INTEGER)")
+        
+        c.execute("CREATE TABLE kcids1314 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE kcids1415 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE kcids1516 (id INTEGER, hours INTEGER, grade INTEGER)")
+        c.execute("CREATE TABLE kcids1617 (id INTEGER, hours INTEGER, grade INTEGER)")
         hours.addKcidsToDb()
         c.execute("CREATE TABLE kcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
         
