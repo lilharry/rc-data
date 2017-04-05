@@ -93,14 +93,39 @@ text {
 
 
 
-  <br>second graph (elina)<br>
-	<div id="chart" id="second">
+  <br>
+	
+	<style>
+		.legend {                                                   
+			font-size: 12px;                                         
+		}                                                           
+		rect {                                                      
+			stroke-width: 2;                                          
+		}
+	</style>
+	<div id="chart">
+		<center>
+		<h3> Comparison of Hours Spent Volunteering by Grade in Red Cross (2014-2017) </h3>
+		<br>
 		<form>
-			<label><input type="radio" name="data" value="0" checked> 2014</label>
-			<label><input type="radio" name="data" value="1"> 2015</label>
-			<label><input type="radio" name="data" value="2"> 2016</label>
-			<label><input type="radio" name="data" value="3"> 2017</label>
+			<label><input type="radio" name="data" value="0" class="rc" checked> 2014</label>
+			<label><input type="radio" name="data" value="1" class="rc"> 2015</label>
+			<label><input type="radio" name="data" value="2" class="rc"> 2016</label>
+			<label><input type="radio" name="data" value="3" class="rc"> 2017</label>
 		</form>
+		</center>
+	</div>
+	<div id="chart2">
+		<center>
+		<h3> Comparison of Hours Spent Volunteering by Grade in Key Club (2014-2017) </h3>
+		<br>
+		<form>
+			<label><input type="radio" name="data" value="0" class="kc" checked> 2014</label>
+			<label><input type="radio" name="data" value="1" class="kc"> 2015</label>
+			<label><input type="radio" name="data" value="2" class="kc"> 2016</label>
+			<label><input type="radio" name="data" value="3" class="kc"> 2017</label>
+		</form>
+		</center>
 	</div>
 
 	<script> 
@@ -125,9 +150,32 @@ text {
 			{label: 'Juniors', count: {{totalRc['2017'][2]}}},
 			{label: 'Seniors', count: {{totalRc['2017'][3]}}}]
 		];
+		
+		var dataset2 = [
+			[{label: 'Freshmen', count: {{totalKc['2014'][0]}}},
+			{label: 'Sophomores', count: {{totalKc['2014'][1]}}},
+			{label: 'Juniors', count: {{totalKc['2014'][2]}}},
+			{label: 'Seniors', count: {{totalKc['2014'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalKc['2015'][0]}}},
+			{label: 'Sophomores', count: {{totalKc['2015'][1]}}},
+			{label: 'Juniors', count: {{totalKc['2015'][2]}}},
+			{label: 'Seniors', count: {{totalKc['2015'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalKc['2016'][0]}}},
+			{label: 'Sophomores', count: {{totalKc['2016'][1]}}},
+			{label: 'Juniors', count: {{totalKc['2016'][2]}}},
+			{label: 'Seniors', count: {{totalKc['2016'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalKc['2017'][0]}}},
+			{label: 'Sophomores', count: {{totalKc['2017'][1]}}},
+			{label: 'Juniors', count: {{totalKc['2017'][2]}}},
+			{label: 'Seniors', count: {{totalKc['2017'][3]}}}]
+		];
 	</script>	
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="../static/rc-hours.js"></script>
+	<script src="../static/kc-hours.js"></script>
 	
   <br>third graph (jason)<br>
   <svg id = "third" height="400" width="700" style="border: 1px solid;" xmlns="http://www.w3.org/2000/svg">
