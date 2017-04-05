@@ -19,3 +19,7 @@ harryL -- 2016-04-04 22:26
 																	  "2015":[f,s,j,S],
 																	  "2016":[f,s,j,S],
 																	  "2017":[f,s,j,S]} )
+harryL -- 2016-04-04 23:56
+		Added getTotalVolunteers (returns dict with {"rc2014": #,"rc2015": #,"rc2016": #,"rc2017": #,
+													 "kc2014": #,"kc2015": #,"kc2016": #,"kc2017": # })
+		Start events.py
