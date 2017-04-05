@@ -23,7 +23,6 @@ harryL -- 2016-04-04 22:26
 																	  "2015":[f,s,j,S],
 																	  "2016":[f,s,j,S],
 																	  "2017":[f,s,j,S]} )
-
 elinaH -- 2017-04-04 23:44
 		Finished basic template, without putting in actual data from the database
 
@@ -39,3 +38,8 @@ elinaH -- 2017-04-05 1:52
 		Added data from the database to the pie charts and started the transition
 elinaH -- 2017-04-05 5:12
 		Finished the comparison of hours by grade for both RC and KC charts
+harryL -- 2017-04-05 7:00
+		Finish d3 for line graph
+harryL -- 2017-04-05 7:44
+		Add new route for event details (didnt work on main page?)
+		Add bootstrap css + icon

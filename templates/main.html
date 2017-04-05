@@ -1,5 +1,11 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
+<head>
+<title>Wack</title>
+<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+</head>
 <style>
 
 body {
@@ -51,15 +57,25 @@ text {
   font: 12px sans-serif;
 }
 </style>
-
-<html>
-
-<head>
-  <center><h1> Red Cross x Key Club Data Visualization</h1></center>
 </head>
 
-<br>
-<br>
+<nav class="navbar navbar-default navbar-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img src="/static/icon.png" width="40" height="40"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Homepage</a></li>
+            <li><a href="/events/">Events</a></li>
+        </ul>
+    </div>
+</nav>
+
+  <div class="jumbotron text-center">
+    <h2 id="h2Jumbo"> Red Cross x Key Club Data Visualization </h2>
+  </div>  
+        <br>
+        <br>
 
 <body>
 
@@ -91,8 +107,6 @@ text {
 
 <script src="static/kcVol-graph1.js"></script>
 
-
-
   <br>
 	
 	<style>
@@ -115,6 +129,7 @@ text {
 		</form>
 		</center>
 	</div>
+
 	<div id="chart2">
 		<center>
 		<h3> Comparison of Hours Spent Volunteering by Grade in Key Club (2014-2017) </h3>
@@ -177,19 +192,8 @@ text {
 	<script src="../static/rc-hours.js"></script>
 	<script src="../static/kc-hours.js"></script>
 	
-  <br>third graph (jason)<br>
-  <svg id = "third" height="400" width="700" style="border: 1px solid;" xmlns="http://www.w3.org/2000/svg">
-
-
-
-  </svg>
-
-
-  <div id="graph" class="aGraph" style="position:absolute;top:0px;left:0; float:left;"></div>
-
-
-  <script src="static/line.js"></script>
-
+ 
+ 
 
 
 </body>
