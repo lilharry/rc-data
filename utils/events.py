@@ -45,40 +45,61 @@ def fetchEvents():
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
     
-             #j,f,m,a,m,j,j,a,s,o,n,d
-    e2016h = [0,0,0,0,0,0,0,0,0,0,0,0]
-    e2016v = [0,0,0,0,0,0,0,0,0,0,0,0]
-    e2017h = [0,0,0,0,0,0,0,0,0,0,0,0]  
-    e2017v = [0,0,0,0,0,0,0,0,0,0,0,0]  
 
+    f = open("static/e2016.csv","w")
+    f.write("date,volunteers,hours\n")
     query = "SELECT * FROM rcevents2016"
     
     events = c.execute(query)
+    dates = []
+    volunteers = []
+    hours = []
+    i = -1
+    date = ""
     for e in events:
-        month = int(e[0][:2]) 
-        hours = e[2] / 60.0
-        volunteers = e[3]
-        e2016h[month - 1] += hours * volunteers
-        e2016v[month - 1] += volunteers
-    
+        if date != e[0][:3] + e[0][6:]:
+            dates.append(e[0][:3] + e[0][6:])
+            volunteers.append(0)
+            hours.append(0)
+            i+=1
+            date = dates[i]
+        
+        volunteers[i] += e[3]
+        hours[i] += e[2] / 60.0 * e[3]   
+
+    for i in range(len(dates)):
+
+        f.write("%s,%s,%s\n"%(dates[i],volunteers[i],hours[i]))
+    f.close()
+
+    f = open("static/e2017.csv","w")
+    f.write("date,volunteers,hours\n")
     query = "SELECT * FROM rcevents2017"
     
     events = c.execute(query)
+    dates = []
+    volunteers = []
+    hours = []
+    i = -1
+    date = ""
     for e in events:
-        month = int(e[0][:2]) 
-        hours = e[2] / 60.0 
-        volunteers = e[3]
-        e2017h[month - 1] += hours * volunteers
-        e2017v[month - 1] += volunteers
+        if date != e[0][:3] + e[0][6:]:
+            dates.append(e[0][:3] + e[0][6:])
+            volunteers.append(0)
+            hours.append(0)
+            i+=1
+            date = dates[i]
+        
+        volunteers[i] += e[3]
+        hours[i] += e[2] / 60.0 * e[3]   
 
+    for i in range(len(dates)):
+
+        f.write("%s,%s,%s\n"%(dates[i],volunteers[i],hours[i]))
+    f.close()
     db.close()
-
-    return {"e2016h":e2016h,
-            "e2017h":e2017h,
-            "e2016v":e2016v,
-            "e2017v":e2017v} 
-
-
+    
+    return
 
 #mm -> name
 def monthConversion(mm):

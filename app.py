@@ -9,9 +9,6 @@ app = Flask(__name__)
 def hello():
 	return render_template('main.html', totalRc = hours.getTotalRcHours())
 
-@app.route("/events")
-def events():
-    return render_template('events.html',e = hours.fetchEvents())
 
 
 if __name__ == '__main__':
