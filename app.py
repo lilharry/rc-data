@@ -9,6 +9,11 @@ app = Flask(__name__)
 def hello():
 	return render_template('main.html')
 
+@app.route("/events")
+def events():
+    return render_template('events.html',e = hours.fetchEvents())
+
+
 if __name__ == '__main__':
     if os.path.getsize("data/database.db") == 0:
         f = "data/database.db"

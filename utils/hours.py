@@ -527,7 +527,6 @@ if __name__ == "__main__":
     info = list(c.execute(query))
     random.shuffle(info)
     print info[0]
-    
-    print getTotalVolunteers()
     '''
-    pass
+    print getTotalVolunteers()
+    
