@@ -1,4 +1,57 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+path.slice{
+  stroke-width:2px;
+}
+
+polyline{
+  opacity: .3;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+}
+
+.labelValue
+{
+  font-size: 60%;
+  opacity: .5;
+  
+}
+
+.toolTip {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #888888;
+    color: black;
+    font: 12px sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+text {
+  font: 12px sans-serif;
+}
+</style>
+
 <html>
 
 <head>
@@ -9,27 +62,36 @@
 <br>
 
 <body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
 <center>
-  <h3> ok this looks hella ugly rn but !!! </h3>
+<h3> Number of Volunteers in Red Cross (2014-2017)</h3> <br>
 
-  <svg id = "first" height="500" width="700" style="border: 1px solid;" xmlns="http://www.w3.org/2000/svg">
+<form>
+<label><input type="radio" name="dataset" id="dataset" value="2014" class = "rc">2014</label>
+<label><input type="radio" name="dataset" id="dataset" value="2015" class = "rc">2015</label>
+<label><input type="radio" name="dataset" id="dataset" value="2016" class = "rc">2016</label>
+<label><input type="radio" name="dataset" id="dataset" value="2017" class = "rc" checked>2017</label>
+</form>
+</center>
+
+<script src="../static/rcVol-graph1.js"></script>
+
+<center>
+<h3> Number of Volunteers in Key Club (2014-2017) </h3> <br>
+
+<form>
+<label><input type="radio" name="dataset" id="dataset" value="2014" class = "kc">2014</label>
+<label><input type="radio" name="dataset" id="dataset" value="2015" class = "kc">2015</label>
+<label><input type="radio" name="dataset" id="dataset" value="2016" class = "kc">2016</label>
+<label><input type="radio" name="dataset" id="dataset" value="2017" class = "kc" checked>2017</label>
+</form>
+</center>
+
+<script src="../static/kcVol-graph1.js"></script>
 
 
-  <foreignObject id="pieChart"></forignObject>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
-  <script src="../static/d3pie.min.js"></script>
-  <script src="../static/rc-pie.js"></script>
-  <!--
-
-  <foreignObject id="pieChart"></foreignObject>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
-  <script src="../static/d3pie.min.js"></script>
-  <script>
-  var pie = new d3pie("pieChart", {"header":{"title":{"text":"Key Club","fontSize":22,"font":"helvetica"},"subtitle":{"color":"#999999","fontSize":10,"font":"verdana"},"titleSubtitlePadding":12},"footer":{"color":"#999999","fontSize":11,"font":"open sans","location":"bottom-center"},"size":{"canvasHeight":400,"canvasWidth":700,"pieInnerRadius":"44%","pieOuterRadius":"79%"},"data":{"content":[{"label":"Seniors","value":6000,"color":"#004b7c"},{"label":"Juniors","value":5000,"color":"#289ab8"},{"label":"Sophomores","value":4000,"color":"#2e70c9"},{"label":"Freshmen","value":3000,"color":"#77c1dd"}]},"labels":{"outer":{"pieDistance":19},"inner":{"format":"value"},"mainLabel":{"font":"verdana"},"percentage":{"color":"#e1e1e1","font":"verdana","decimalPlaces":0},"value":{"color":"#e1e1e1","font":"verdana"},"lines":{"enabled":true,"style":"straight"},"truncation":{"enabled":true}},"effects":{"pullOutSegmentOnClick":{"effect":"none","speed":400,"size":8}},"callbacks":{}});
-  </script>
--->
-
-  </svg>
 
   <br>second graph (elina)<br>
 	<div id="chart" id="second">
@@ -81,8 +143,7 @@
   </svg>
 
 
-</center>
-<script src = "../static/svg.js"></script>
+
 </body>
 
 </html>

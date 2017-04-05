@@ -23,3 +23,6 @@ harryL -- 2016-04-04 23:56
 		Added getTotalVolunteers (returns dict with {"rc2014": #,"rc2015": #,"rc2016": #,"rc2017": #,
 													 "kc2014": #,"kc2015": #,"kc2016": #,"kc2017": # })
 		Start events.py
+
+celineY -- 2017-04-4 2:08
+        Finished Number of Volunteers in RC and KC (2013-2017) charts

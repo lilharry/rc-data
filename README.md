@@ -1,8 +1,8 @@
 # Stuy’s Student Organizations
 By Team Wack
+- Celine (Project Manager)
 - Harry
 - Elina
-- Celine
 - Jason
 
 ## Purpose:
