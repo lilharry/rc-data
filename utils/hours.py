@@ -35,27 +35,27 @@ def addKcidsToDb():
     i = 0
 
     for row in reader:
-        i+=1
         try:
             student = row[0]
             if student[0:1] == "9":
-                grade = 4
+                grade = 2014
             elif student[0:1] == "1":
-                grade = 3
+                grade = 2015
             elif student[0:1] == "2":
-                grade = 2
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 1    
+                grade = 2017 
             student = int(student) #check if its an int, if not, go to except block
             student = l[i]
-            hours = int(row[1]) 
+            hours = int(round(float(row[1]))) 
             if hours < 0:
                 hours = 0
             h1314.append([student,hours,grade])
 
         except ValueError:
-            continue
-    
+            pass
+        i+=1
+
     reader = list(csv.reader(f1415))
 
     #stuff to generate random number for id
@@ -67,25 +67,25 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "1":
-                grade = 4
+                grade = 2015
             elif student[0:1] == "2":
-                grade = 3
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 2
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 1    
+                grade = 2018 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1415.append([student,hours,grade])
         
         except ValueError:
-            continue
+            pass
+        i+=1
 
     reader = list(csv.reader(f1516))
-    
     #stuff to generate random number for id
     l = range(len(reader))
     random.shuffle(l)
@@ -95,22 +95,22 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "2":
-                grade = 4
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 3
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 2
+                grade = 2018
             elif student[0:1] == "5":
-                grade = 1    
+                grade = 2019 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1516.append([student,hours,grade])
-            
         except ValueError:
-            continue
+            pass
+        i+=1
 
     reader = list(csv.reader(f1617))
     
@@ -123,22 +123,23 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "3":
-                grade = 4
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 3
+                grade = 2018
             elif student[0:1] == "5":
-                grade = 2
+                grade = 2019
             elif student[0:1] == "1":
-                grade = 1    
+                grade = 2020 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1617.append([student,hours,grade])          
     
         except ValueError:
-            continue
+            pass
+        i+=1
 
     for student in h1314:
         c.execute("INSERT INTO kcids1314 VALUES (?,?,?)",(student[0],student[1],student[2]))
@@ -189,26 +190,26 @@ def addRcidsToDb():
     i = 0
 
     for row in reader:
-        i+=1
         try:
             student = row[0]
             if student[0:1] == "9":
-                grade = 4
+                grade = 2014
             elif student[0:1] == "1":
-                grade = 3
+                grade = 2015
             elif student[0:1] == "2":
-                grade = 2
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 1    
+                grade = 2017 
             student = int(student) #check if its an int, if not, go to except block
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1314.append([student,hours,grade])
 
         except ValueError:
-            continue
+            pass
+        i+=1
     
     reader = list(csv.reader(f1415))
 
@@ -221,22 +222,23 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "1":
-                grade = 4
+                grade = 2015
             elif student[0:1] == "2":
-                grade = 3
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 2
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 1    
+                grade = 2018 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1415.append([student,hours,grade])
         
         except ValueError:
-            continue
+            pass
+        i+=1
 
     reader = list(csv.reader(f1516))
     
@@ -249,22 +251,23 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "2":
-                grade = 4
+                grade = 2016
             elif student[0:1] == "3":
-                grade = 3
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 2
+                grade = 2018
             elif student[0:1] == "5":
-                grade = 1    
+                grade = 2019 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1516.append([student,hours,grade])
             
         except ValueError:
-            continue
+            pass
+        i+=1
 
     reader = list(csv.reader(f1617))
     
@@ -277,22 +280,23 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "3":
-                grade = 4
+                grade = 2017
             elif student[0:1] == "4":
-                grade = 3
+                grade = 2018
             elif student[0:1] == "5":
-                grade = 2
+                grade = 2019
             elif student[0:1] == "1":
-                grade = 1    
+                grade = 2020 
             student = int(student)
             student = l[i]
-            hours = int(row[1])
+            hours = int(round(float(row[1])))
             if hours < 0:
                 hours = 0
             h1617.append([student,hours,grade])          
     
         except ValueError:
-            continue
+            pass
+        i+=1
 
     for student in h1314:
         c.execute("INSERT INTO rcids1314 VALUES (?,?,?)",(student[0],student[1],student[2]))
@@ -312,5 +316,43 @@ def addRcidsToDb():
     db.close()
 
 
+def getRcHours():
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    
+    query = "SELECT * FROM rcids1314,rcids1415,rcids1516,rcids1617 WHERE rcids1314.id = rcids1415.id AND rcids1415.id = rcids1516.id AND rcids1516.id = rcids1617.id"
 
+
+    info = list(c.execute(query))
+    random.shuffle(info)
+    info = info[0]
+    
+    return (info[1],info[4],info[7],info[10])
+
+def getKcHours():
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    
+    query = "SELECT * FROM kcids1314,kcids1415,kcids1516,kcids1617 WHERE kcids1314.id = kcids1415.id AND kcids1415.id = kcids1516.id AND kcids1516.id = kcids1617.id"
+
+
+    info = list(c.execute(query))
+    random.shuffle(info)
+    info = info[0]
+    
+    return (info[1],info[4],info[7],info[10])
+
+
+
+if __name__ == "__main__":
+    '''    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+
+    query = "SELECT * FROM rcids1314,rcids1415,rcids1516,rcids1617 WHERE rcids1314.id = rcids1415.id AND rcids1415.id = rcids1516.id AND rcids1516.id = rcids1617.id"
+
+    info = list(c.execute(query))
+    random.shuffle(info)
+    print info[0]
+    '''
+    print getRcHours()
 

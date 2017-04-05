@@ -7,6 +7,9 @@ harryL -- 2017-04-02 12:28
         Initialize utils
 harryL -- 2017-04-03 22:26
 	    Added csv parser for kcids and rcids
-	    Added database (remove database.db + touch database.db if you want to)
-harryL -- 2017-04-04 10:00	   
-	    Added csvs to directory
+	    Added database 
+harryL -- 2017-04-04 12:37
+		Removed csvs from directory
+		Added id randomizer for the database
+		Added gitignore for data/csv/
+		
