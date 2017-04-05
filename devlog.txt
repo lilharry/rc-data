@@ -1,3 +1,6 @@
+jasonM -- 2017-03-29 13:00
+	Started data collection from RC/KC
+	Extracted hours and events metadata
 celineY -- 2017-03-31 23:56
         Created flask app
         Created RC donut chart template
@@ -6,12 +9,12 @@ harryL -- 2017-04-02 12:28
         Modifed app.py to create database
         Initialize utils
 harryL -- 2017-04-03 22:26
-	    Added csv parser for kcids and rcids
-	    Added database 
-			
+	Added csv parser for kcids and rcids
+	Added database 
+jasonM -- 2017-04-04 23:00
+	Began processing data and using database to request hours of ID	
 elinaH -- 2017-04-04 00:15
-		Started basic template for the pie chart
-			
+		Started basic template for the pie chart		
 harryL -- 2017-04-04 12:37
 		Removed csvs from directory
 		Added id randomizer for the database
@@ -33,9 +36,10 @@ harryL -- 2016-04-04 23:56
 		Start events.py
 
 celineY -- 2017-04-4 2:08
-        Finished Number of Volunteers in RC and KC (2013-2017) charts
-				
+        Finished Number of Volunteers in RC and KC (2013-2017) charts		
 elinaH -- 2017-04-05 1:52 
 		Added data from the database to the pie charts and started the transition
 elinaH -- 2017-04-05 5:12
 		Finished the comparison of hours by grade for both RC and KC charts
+jasonM -- 2017-04-05 6:00
+	Unable to link RC ID hours with HTML successfully, pushed code
