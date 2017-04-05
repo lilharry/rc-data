@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	return render_template('main.html', totalRc = hours.getTotalRcHours())
+	return render_template('main.html', totalRc = hours.getTotalRcHours(), totalKc = hours.getTotalKcHours())
 
 
 

@@ -1,21 +1,15 @@
 var makePie = function() {
-	/*var dataset = [
-		{ label: 'Seniors', count: 10 },
-		{ label: 'Juniors', count: 40 },
-		{ label: 'Sophomores', count: 30 },
-		{ label: 'Freshmen', count: 20 }
-	];*/
-	var dataYr = dataset[0];
+
+	var dataYr = dataset2[0];
 	var width = 700;
 	var height = 400;
 	var radius = Math.min(360, 360) / 2;
 	var legendRectSize = 18;
   var legendSpacing = 4;
 
-	var color = d3.scale.ordinal()
-		.range(["#dd7777", "#c92e2e", "#aa2f2f", "#7c0000"]);
-		
-	var svg = d3.select('#chart')
+	var color = d3.scaleOrdinal(d3.schemeCategory20c);
+
+	var svg = d3.select('#chart2')
 		.append('svg')
 		.attr('width', width)
 		.attr('height', height)
@@ -41,12 +35,12 @@ var makePie = function() {
 		})
 		.each(function(d) { this._current = d; });
 		
-	d3.selectAll(".rc")
+	d3.selectAll(".kc")
       .on("change", change);
 			
 	function change() {
     var value = this.value;
-		dataYr = dataset[value];
+		dataYr = dataset2[value];
     path = path.data(pie(dataYr)); 
     path.transition().duration(750).attrTween("d", arcTween);
   }
