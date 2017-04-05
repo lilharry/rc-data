@@ -14,4 +14,8 @@ harryL -- 2017-04-04 12:37
 		Added gitignore for data/csv/
 harryL -- 2017-04-04 20:59
 		Added getRcHours and getKcHours (returns dict with {"id"= id, "hours" = [freshman,soph,jr,sr]}
-		
+harryL -- 2016-04-04 22:26
+		Added getTotalRcHours and getTotalKcHours (returns dict with {"2014":[f,s,j,S],
+																	  "2015":[f,s,j,S],
+																	  "2016":[f,s,j,S],
+																	  "2017":[f,s,j,S]} )

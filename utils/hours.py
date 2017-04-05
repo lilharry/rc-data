@@ -38,13 +38,13 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "9":
-                grade = 2014
+                grade = 4
             elif student[0:1] == "1":
-                grade = 2015
+                grade = 3
             elif student[0:1] == "2":
-                grade = 2016
+                grade = 2
             elif student[0:1] == "3":
-                grade = 2017 
+                grade = 1
             student = int(student) #check if its an int, if not, go to except block
             student = l[i]
             hours = int(round(float(row[1]))) 
@@ -67,13 +67,13 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "1":
-                grade = 2015
+                grade = 4
             elif student[0:1] == "2":
-                grade = 2016
+                grade = 3
             elif student[0:1] == "3":
-                grade = 2017
+                grade = 2
             elif student[0:1] == "4":
-                grade = 2018 
+                grade = 1 
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -95,13 +95,13 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "2":
-                grade = 2016
+                grade = 4
             elif student[0:1] == "3":
-                grade = 2017
+                grade = 3
             elif student[0:1] == "4":
-                grade = 2018
+                grade = 2
             elif student[0:1] == "5":
-                grade = 2019 
+                grade = 1
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -123,13 +123,13 @@ def addKcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "3":
-                grade = 2017
+                grade = 4
             elif student[0:1] == "4":
-                grade = 2018
+                grade = 3
             elif student[0:1] == "5":
-                grade = 2019
+                grade = 2
             elif student[0:1] == "1":
-                grade = 2020 
+                grade = 1
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -193,13 +193,13 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "9":
-                grade = 2014
+                grade = 4
             elif student[0:1] == "1":
-                grade = 2015
+                grade = 3
             elif student[0:1] == "2":
-                grade = 2016
+                grade = 2
             elif student[0:1] == "3":
-                grade = 2017 
+                grade = 1
             student = int(student) #check if its an int, if not, go to except block
             student = l[i]
             hours = int(round(float(row[1])))
@@ -222,13 +222,13 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "1":
-                grade = 2015
+                grade = 4
             elif student[0:1] == "2":
-                grade = 2016
+                grade = 3
             elif student[0:1] == "3":
-                grade = 2017
+                grade = 2
             elif student[0:1] == "4":
-                grade = 2018 
+                grade = 1
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -251,13 +251,13 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "2":
-                grade = 2016
+                grade = 4
             elif student[0:1] == "3":
-                grade = 2017
+                grade = 3
             elif student[0:1] == "4":
-                grade = 2018
+                grade = 2
             elif student[0:1] == "5":
-                grade = 2019 
+                grade = 1
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -280,13 +280,13 @@ def addRcidsToDb():
         try:
             student = row[0]
             if student[0:1] == "3":
-                grade = 2017
+                grade = 4
             elif student[0:1] == "4":
-                grade = 2018
+                grade = 3
             elif student[0:1] == "5":
-                grade = 2019
+                grade = 2
             elif student[0:1] == "1":
-                grade = 2020 
+                grade = 1
             student = int(student)
             student = l[i]
             hours = int(round(float(row[1])))
@@ -346,9 +346,142 @@ def getRandomKc():
             "hours": [info[1],info[4],info[7],info[10]]
            }
 def getTotalRcHours():
-    pass
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    
+    #hrs  = [f,s,j,S]
+    h1314 = [0,0,0,0]
+    h1415 = [0,0,0,0]
+    h1516 = [0,0,0,0]
+    h1617 = [0,0,0,0]
+        
+    info = c.execute("SELECT hours,grade from rcids1314")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1314[0] += x[0]
+        elif grade == 2:
+            h1314[1] += x[0]
+        elif grade == 3:
+            h1314[2] += x[0]
+        elif grade == 4:
+            h1314[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from rcids1415")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1415[0] += x[0]
+        elif grade == 2:
+            h1415[1] += x[0]
+        elif grade == 3:
+            h1415[2] += x[0]
+        elif grade == 4:
+            h1415[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from rcids1516")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1516[0] += x[0]
+        elif grade == 2:
+            h1516[1] += x[0]
+        elif grade == 3:
+            h1516[2] += x[0]
+        elif grade == 4:
+            h1516[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from rcids1617")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1617[0] += x[0]
+        elif grade == 2:
+            h1617[1] += x[0]
+        elif grade == 3:
+            h1617[2] += x[0]
+        elif grade == 4:
+            h1617[3] += x[0]
+    
+    return {"2014":h1314,
+            "2015":h1415,
+            "2016":h1516,
+            "2017":h1617}
+
+
+
+
 def getTotalKcHours():
-    pass
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    
+    #hrs  = [f,s,j,S]
+    h1314 = [0,0,0,0]
+    h1415 = [0,0,0,0]
+    h1516 = [0,0,0,0]
+    h1617 = [0,0,0,0]
+        
+    info = c.execute("SELECT hours,grade from kcids1314")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1314[0] += x[0]
+        elif grade == 2:
+            h1314[1] += x[0]
+        elif grade == 3:
+            h1314[2] += x[0]
+        elif grade == 4:
+            h1314[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from kcids1415")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1415[0] += x[0]
+        elif grade == 2:
+            h1415[1] += x[0]
+        elif grade == 3:
+            h1415[2] += x[0]
+        elif grade == 4:
+            h1415[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from kcids1516")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1516[0] += x[0]
+        elif grade == 2:
+            h1516[1] += x[0]
+        elif grade == 3:
+            h1516[2] += x[0]
+        elif grade == 4:
+            h1516[3] += x[0]
+    
+    info = c.execute("SELECT hours,grade from kcids1617")
+
+    for x in info:
+        grade = x[1]
+        if grade == 1:
+            h1617[0] += x[0]
+        elif grade == 2:
+            h1617[1] += x[0]
+        elif grade == 3:
+            h1617[2] += x[0]
+        elif grade == 4:
+            h1617[3] += x[0]
+    
+    return {"2014":h1314,
+            "2015":h1415,
+            "2016":h1516,
+            "2017":h1617}
+
 
 if __name__ == "__main__":
     '''    db = sqlite3.connect("data/database.db")
@@ -360,3 +493,5 @@ if __name__ == "__main__":
     random.shuffle(info)
     print info[0]
     '''
+    print getTotalRcHours()
+    print getTotalKcHours()
