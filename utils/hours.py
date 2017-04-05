@@ -326,6 +326,8 @@ def getRandomRc():
     info = list(c.execute(query))
     random.shuffle(info)
     info = info[0]
+
+    db.close()
     
     return {"id": info[0],
             "hours": [info[1],info[4],info[7],info[10]]
@@ -342,6 +344,8 @@ def getRandomKc():
     random.shuffle(info)
     info = info[0]
     
+    db.close()
+
     return {"id": info[0],
             "hours": [info[1],info[4],info[7],info[10]]
            }
@@ -407,6 +411,7 @@ def getTotalRcHours():
         elif grade == 4:
             h1617[3] += x[0]
     
+    db.close()
     return {"2014":h1314,
             "2015":h1415,
             "2016":h1516,
@@ -476,11 +481,41 @@ def getTotalKcHours():
             h1617[2] += x[0]
         elif grade == 4:
             h1617[3] += x[0]
-    
+    db.close()
     return {"2014":h1314,
             "2015":h1415,
             "2016":h1516,
             "2017":h1617}
+
+def getTotalVolunteers():
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    for x in c.execute("SELECT COUNT(*) FROM rcids1314"):
+        rc2014 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM rcids1415"):
+        rc2015 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM rcids1516"):
+        rc2016 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM rcids1617"):
+        rc2017 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM kcids1314"):
+        kc2014 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM kcids1415"):
+        kc2015 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM kcids1516"):
+        kc2016 = x[0]
+    for x in c.execute("SELECT COUNT(*) FROM kcids1617"):
+        kc2017 = x[0]
+    
+    db.close()
+    return {"rc2014":rc2014,
+            "rc2015":rc2015,
+            "rc2016":rc2016,
+            "rc2017":rc2017,
+            "kc2014":kc2014,
+            "kc2015":kc2015,
+            "kc2016":kc2016,
+            "kc2017":kc2017}
 
 
 if __name__ == "__main__":
@@ -493,5 +528,5 @@ if __name__ == "__main__":
     random.shuffle(info)
     print info[0]
     '''
-    print getTotalRcHours()
-    print getTotalKcHours()
+    print getTotalVolunteers()
+    

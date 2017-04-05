@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-from utils import hours
+from utils import hours,events
 import os
 import sqlite3
 
@@ -8,6 +8,11 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
 	return render_template('main.html', totalRc = hours.getTotalRcHours())
+
+@app.route("/events")
+def events():
+    return render_template('events.html',e = hours.fetchEvents())
+
 
 if __name__ == '__main__':
     if os.path.getsize("data/database.db") == 0:
@@ -20,13 +25,15 @@ if __name__ == '__main__':
         c.execute("CREATE TABLE rcids1516 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE rcids1617 (id INTEGER, hours INTEGER, grade INTEGER)")
 
-        c.execute("CREATE TABLE rcevents (name TEXT, timestamp TEXT, id INTEGER, hours INTEGER)")
+        c.execute("CREATE TABLE rcevents2016 (name TEXT, date TEXT, length INTEGER, volunteers INTEGER )")
+        c.execute("CREATE TABLE rcevents2017 (name TEXT, date TEXT, length INTEGER, volunteers INTEGER )")  
 
         c.execute("CREATE TABLE kcids1314 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1415 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1516 (id INTEGER, hours INTEGER, grade INTEGER)")
         c.execute("CREATE TABLE kcids1617 (id INTEGER, hours INTEGER, grade INTEGER)")
         
+        events.addEventsToDb()
         hours.addRcidsToDb()
         hours.addKcidsToDb()
         
