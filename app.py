@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	return render_template('main.html')
+	return render_template('main.html', totalRc = hours.getTotalRcHours())
 
 if __name__ == '__main__':
     if os.path.getsize("data/database.db") == 0:

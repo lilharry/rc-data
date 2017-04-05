@@ -33,8 +33,37 @@
 
   <br>second graph (elina)<br>
 	<div id="chart" id="second">
+		<form>
+			<label><input type="radio" name="data" value="0" checked> 2014</label>
+			<label><input type="radio" name="data" value="1"> 2015</label>
+			<label><input type="radio" name="data" value="2"> 2016</label>
+			<label><input type="radio" name="data" value="3"> 2017</label>
+		</form>
 	</div>
 
+	<script> 
+		var dataset = [
+			[{label: 'Freshmen', count: {{totalRc['2014'][0]}}},
+			{label: 'Sophomores', count: {{totalRc['2014'][1]}}},
+			{label: 'Juniors', count: {{totalRc['2014'][2]}}},
+			{label: 'Seniors', count: {{totalRc['2014'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalRc['2015'][0]}}},
+			{label: 'Sophomores', count: {{totalRc['2015'][1]}}},
+			{label: 'Juniors', count: {{totalRc['2015'][2]}}},
+			{label: 'Seniors', count: {{totalRc['2015'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalRc['2016'][0]}}},
+			{label: 'Sophomores', count: {{totalRc['2016'][1]}}},
+			{label: 'Juniors', count: {{totalRc['2016'][2]}}},
+			{label: 'Seniors', count: {{totalRc['2016'][3]}}}],
+			
+			[{label: 'Freshmen', count: {{totalRc['2017'][0]}}},
+			{label: 'Sophomores', count: {{totalRc['2017'][1]}}},
+			{label: 'Juniors', count: {{totalRc['2017'][2]}}},
+			{label: 'Seniors', count: {{totalRc['2017'][3]}}}]
+		];
+	</script>	
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="../static/rc-hours.js"></script>
 	
