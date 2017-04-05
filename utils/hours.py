@@ -316,7 +316,7 @@ def addRcidsToDb():
     db.close()
 
 
-def getRcHours():
+def getRandomRc():
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
     
@@ -327,9 +327,11 @@ def getRcHours():
     random.shuffle(info)
     info = info[0]
     
-    return (info[1],info[4],info[7],info[10])
+    return {"id": info[0],
+            "hours": [info[1],info[4],info[7],info[10]]
+           }
 
-def getKcHours():
+def getRandomKc():
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
     
@@ -340,9 +342,13 @@ def getKcHours():
     random.shuffle(info)
     info = info[0]
     
-    return (info[1],info[4],info[7],info[10])
-
-
+    return {"id": info[0],
+            "hours": [info[1],info[4],info[7],info[10]]
+           }
+def getTotalRcHours():
+    pass
+def getTotalKcHours():
+    pass
 
 if __name__ == "__main__":
     '''    db = sqlite3.connect("data/database.db")
@@ -354,5 +360,3 @@ if __name__ == "__main__":
     random.shuffle(info)
     print info[0]
     '''
-    print getRcHours()
-

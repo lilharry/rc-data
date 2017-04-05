@@ -12,4 +12,6 @@ harryL -- 2017-04-04 12:37
 		Removed csvs from directory
 		Added id randomizer for the database
 		Added gitignore for data/csv/
+harryL -- 2017-04-04 20:59
+		Added getRcHours and getKcHours (returns dict with {"id"= id, "hours" = [freshman,soph,jr,sr]}
 		
