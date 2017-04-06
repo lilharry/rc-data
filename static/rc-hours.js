@@ -39,7 +39,16 @@ var makePie = function() {
 		.attr('fill', function(d) {
 			return color(d.data.label);
 		})
-		.each(function(d) { this._current = d; });
+		.each(function(d) { this._current = d; })
+		.on("mousemove", function(d){
+			div.style("left", d3.event.pageX+10+"px");
+			div.style("top", d3.event.pageY-25+"px");
+			div.style("display", "inline-block");
+			div.html((d.data.label)+"<br>"+(d.data.count));
+		})
+		.on("mouseout", function(d){
+			div.style("display", "none");
+		});
 		
 	d3.selectAll(".rc")
       .on("change", change);
